@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit
+.env
+**/token.json
+**/credentials.json
+*.key
+*.pem
+
+# n8n exports that include credential VALUES (use standard export without --backup)
+# Plain workflow JSON (no credential values) is safe to commit
+
+# Google OAuth (re-run auth.js to regenerate)
+mcp-servers/google-analytics-mcp/token.json
+mcp-servers/google-analytics-mcp/credentials.json
+
+# Editor local overrides
+.vscode/settings.json.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code session files (ephemeral, not project tracking)
+.claude/projects/
+
+# Large media files
+*.mp4
+*.mp3
+*.webm
+*.mkv
+*.wav
+*.m4a

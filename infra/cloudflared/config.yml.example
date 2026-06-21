@@ -1,0 +1,28 @@
+# Cloudflare Tunnel config — REFERENCE COPY ONLY
+#
+# The LIVE file that the Windows service actually reads is at:
+#   C:\Windows\System32\config\systemprofile\.cloudflared\config.yml
+# (requires admin PowerShell to edit — service runs as LocalSystem)
+#
+# This file is a sanitized reference. The tunnel ID is in .env.example.
+# To restore: see infra/cloudflared/README.md
+
+tunnel: <CF_TUNNEL_ID>
+credentials-file: C:\Windows\System32\config\systemprofile\.cloudflared\<CF_TUNNEL_ID>.json
+
+ingress:
+  # Add new services BEFORE the api.passionate.agency catch-all
+  - hostname: analytics.passionate.agency
+    service: http://localhost:6004
+
+  - hostname: media.passionate.agency
+    service: http://localhost:6003
+
+  - hostname: lh.passionate.agency
+    service: http://localhost:6002
+
+  - hostname: api.passionate.agency
+    service: http://localhost:5678
+
+  # Required catch-all — must be last
+  - service: http_status:404

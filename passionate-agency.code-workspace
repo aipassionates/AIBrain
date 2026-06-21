@@ -1,0 +1,47 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "passionate-agency (project root)"
+    },
+    {
+      "path": "C:\\tools",
+      "name": "C:/tools (live MCP binaries)"
+    },
+    {
+      "path": "C:\\Users\\user\\pm2",
+      "name": "PM2 configs (legacy — see infra/pm2/)"
+    },
+    {
+      "path": "D:\\media",
+      "name": "Media storage"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.git": true,
+      "**/token.json": true,
+      "**/credentials.json": true,
+      "D:/media/downloads": true,
+      "D:/media/audio": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "D:/media": true
+    },
+    "files.encoding": "utf8",
+    "editor.detectIndentation": true,
+    "editor.tabSize": 2,
+    "javascript.format.enable": true
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.powershell",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "redhat.vscode-yaml",
+      "ms-azuretools.vscode-docker"
+    ]
+  }
+}
