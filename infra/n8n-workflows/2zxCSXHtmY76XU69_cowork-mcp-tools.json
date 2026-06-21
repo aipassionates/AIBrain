@@ -1,0 +1,337 @@
+﻿{
+    "updatedAt":  "2026-05-22T21:15:22.805Z",
+    "createdAt":  "2026-05-21T12:52:51.158Z",
+    "id":  "2zxCSXHtmY76XU69",
+    "name":  "Cowork MCP Tools",
+    "active":  true,
+    "isArchived":  false,
+    "nodes":  [
+                  {
+                      "parameters":  {
+                                         "path":  "cowork"
+                                     },
+                      "position":  [
+                                       -288,
+                                       -160
+                                   ],
+                      "name":  "MCP Server Trigger",
+                      "id":  "b4fa3a86-353a-4fcc-b781-6a73568f21bc",
+                      "webhookId":  "ba872673-bd76-4a47-881d-9e85560bc871",
+                      "type":  "@n8n/n8n-nodes-langchain.mcpTrigger",
+                      "typeVersion":  2
+                  },
+                  {
+                      "parameters":  {
+                                         "toolDescription":  "Lists all n8n workflows with their names, IDs, and active/inactive status.",
+                                         "url":  "http://localhost:5678/api/v1/workflows",
+                                         "authentication":  "genericCredentialType",
+                                         "genericAuthType":  "httpHeaderAuth"
+                                     },
+                      "position":  [
+                                       -160,
+                                       80
+                                   ],
+                      "name":  "list_workflows",
+                      "id":  "1528d55c-9a34-4275-ab01-4dadee8de4c4",
+                      "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                      "typeVersion":  1.1,
+                      "credentials":  {
+                                          "httpHeaderAuth":  {
+                                                                 "id":  "2e83nKyfblZXaIIl",
+                                                                 "name":  "n8n-api-key"
+                                                             }
+                                      }
+                  },
+                  {
+                      "parameters":  {
+                                         "toolDescription":  "Triggers an n8n workflow via its webhook URL. Provide webhookPath (e.g. lead-intake) and optionally a JSON body payload.",
+                                         "method":  "POST",
+                                         "url":  "http://localhost:5678/webhook/{webhookPath}",
+                                         "sendBody":  true,
+                                         "specifyBody":  "json",
+                                         "jsonBody":  "{payload}"
+                                     },
+                      "position":  [
+                                       80,
+                                       80
+                                   ],
+                      "name":  "trigger_webhook_workflow",
+                      "id":  "a3c7f891-1234-5678-abcd-trigger000001",
+                      "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                      "typeVersion":  1.1
+                  },
+                  {
+                      "parameters":  {
+                                         "toolDescription":  "Gets the 10 most recent n8n executions with status (success/error) and timestamps. Use to check if workflows ran successfully.",
+                                         "url":  "http://localhost:5678/api/v1/executions?limit=10",
+                                         "authentication":  "genericCredentialType",
+                                         "genericAuthType":  "httpHeaderAuth"
+                                     },
+                      "position":  [
+                                       320,
+                                       80
+                                   ],
+                      "name":  "get_recent_executions",
+                      "id":  "b4d8e902-5678-90ab-cdef-executions001",
+                      "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                      "typeVersion":  1.1,
+                      "credentials":  {
+                                          "httpHeaderAuth":  {
+                                                                 "id":  "2e83nKyfblZXaIIl",
+                                                                 "name":  "n8n-api-key"
+                                                             }
+                                      }
+                  },
+                  {
+                      "parameters":  {
+                                         "toolDescription":  "Gets full node-level details for a specific execution by ID, including which node failed and the exact error. Use after get_recent_executions to drill into a failed run. Pass the numeric executionId.",
+                                         "url":  "http://localhost:5678/api/v1/executions/{executionId}?includeData=true",
+                                         "authentication":  "genericCredentialType",
+                                         "genericAuthType":  "httpHeaderAuth"
+                                     },
+                      "position":  [
+                                       560,
+                                       80
+                                   ],
+                      "name":  "get_execution_details",
+                      "id":  "c5e9f013-6789-01bc-def0-execdetail001",
+                      "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                      "typeVersion":  1.1,
+                      "credentials":  {
+                                          "httpHeaderAuth":  {
+                                                                 "id":  "2e83nKyfblZXaIIl",
+                                                                 "name":  "n8n-api-key"
+                                                             }
+                                      }
+                  }
+              ],
+    "connections":  {
+                        "list_workflows":  {
+                                               "ai_tool":  [
+                                                               [
+                                                                   {
+                                                                       "node":  "MCP Server Trigger",
+                                                                       "type":  "ai_tool",
+                                                                       "index":  0
+                                                                   }
+                                                               ]
+                                                           ]
+                                           },
+                        "trigger_webhook_workflow":  {
+                                                         "ai_tool":  [
+                                                                         [
+                                                                             {
+                                                                                 "node":  "MCP Server Trigger",
+                                                                                 "type":  "ai_tool",
+                                                                                 "index":  0
+                                                                             }
+                                                                         ]
+                                                                     ]
+                                                     },
+                        "get_recent_executions":  {
+                                                      "ai_tool":  [
+                                                                      [
+                                                                          {
+                                                                              "node":  "MCP Server Trigger",
+                                                                              "type":  "ai_tool",
+                                                                              "index":  0
+                                                                          }
+                                                                      ]
+                                                                  ]
+                                                  },
+                        "get_execution_details":  {
+                                                      "ai_tool":  [
+                                                                      [
+                                                                          {
+                                                                              "node":  "MCP Server Trigger",
+                                                                              "type":  "ai_tool",
+                                                                              "index":  0
+                                                                          }
+                                                                      ]
+                                                                  ]
+                                                  }
+                    },
+    "settings":  {
+                     "executionOrder":  "v1",
+                     "binaryMode":  "separate",
+                     "timeSavedMode":  "fixed",
+                     "callerPolicy":  "workflowsFromSameOwner",
+                     "availableInMCP":  true
+                 },
+    "staticData":  null,
+    "meta":  null,
+    "pinData":  {
+
+                },
+    "versionId":  "feede6f4-9eaa-4c6f-926c-b89826cf851e",
+    "activeVersionId":  "feede6f4-9eaa-4c6f-926c-b89826cf851e",
+    "triggerCount":  1,
+    "shared":  [
+                   {
+                       "updatedAt":  "2026-05-21T12:52:51.161Z",
+                       "createdAt":  "2026-05-21T12:52:51.161Z",
+                       "role":  "workflow:owner",
+                       "workflowId":  "2zxCSXHtmY76XU69",
+                       "projectId":  "pZJYXdxddbFuz3oc"
+                   }
+               ],
+    "activeVersion":  {
+                          "updatedAt":  "2026-05-22T21:15:22.799Z",
+                          "createdAt":  "2026-05-22T21:15:22.799Z",
+                          "versionId":  "feede6f4-9eaa-4c6f-926c-b89826cf851e",
+                          "workflowId":  "2zxCSXHtmY76XU69",
+                          "nodes":  [
+                                        {
+                                            "parameters":  {
+                                                               "path":  "cowork"
+                                                           },
+                                            "position":  [
+                                                             -288,
+                                                             -160
+                                                         ],
+                                            "name":  "MCP Server Trigger",
+                                            "id":  "b4fa3a86-353a-4fcc-b781-6a73568f21bc",
+                                            "webhookId":  "ba872673-bd76-4a47-881d-9e85560bc871",
+                                            "type":  "@n8n/n8n-nodes-langchain.mcpTrigger",
+                                            "typeVersion":  2
+                                        },
+                                        {
+                                            "parameters":  {
+                                                               "toolDescription":  "Lists all n8n workflows with their names, IDs, and active/inactive status.",
+                                                               "url":  "http://localhost:5678/api/v1/workflows",
+                                                               "authentication":  "genericCredentialType",
+                                                               "genericAuthType":  "httpHeaderAuth"
+                                                           },
+                                            "position":  [
+                                                             -160,
+                                                             80
+                                                         ],
+                                            "name":  "list_workflows",
+                                            "id":  "1528d55c-9a34-4275-ab01-4dadee8de4c4",
+                                            "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                                            "typeVersion":  1.1,
+                                            "credentials":  {
+                                                                "httpHeaderAuth":  {
+                                                                                       "id":  "2e83nKyfblZXaIIl",
+                                                                                       "name":  "n8n-api-key"
+                                                                                   }
+                                                            }
+                                        },
+                                        {
+                                            "parameters":  {
+                                                               "toolDescription":  "Triggers an n8n workflow via its webhook URL. Provide webhookPath (e.g. lead-intake) and optionally a JSON body payload.",
+                                                               "method":  "POST",
+                                                               "url":  "http://localhost:5678/webhook/{webhookPath}",
+                                                               "sendBody":  true,
+                                                               "specifyBody":  "json",
+                                                               "jsonBody":  "{payload}"
+                                                           },
+                                            "position":  [
+                                                             80,
+                                                             80
+                                                         ],
+                                            "name":  "trigger_webhook_workflow",
+                                            "id":  "a3c7f891-1234-5678-abcd-trigger000001",
+                                            "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                                            "typeVersion":  1.1
+                                        },
+                                        {
+                                            "parameters":  {
+                                                               "toolDescription":  "Gets the 10 most recent n8n executions with status (success/error) and timestamps. Use to check if workflows ran successfully.",
+                                                               "url":  "http://localhost:5678/api/v1/executions?limit=10",
+                                                               "authentication":  "genericCredentialType",
+                                                               "genericAuthType":  "httpHeaderAuth"
+                                                           },
+                                            "position":  [
+                                                             320,
+                                                             80
+                                                         ],
+                                            "name":  "get_recent_executions",
+                                            "id":  "b4d8e902-5678-90ab-cdef-executions001",
+                                            "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                                            "typeVersion":  1.1,
+                                            "credentials":  {
+                                                                "httpHeaderAuth":  {
+                                                                                       "id":  "2e83nKyfblZXaIIl",
+                                                                                       "name":  "n8n-api-key"
+                                                                                   }
+                                                            }
+                                        },
+                                        {
+                                            "parameters":  {
+                                                               "toolDescription":  "Gets full node-level details for a specific execution by ID, including which node failed and the exact error. Use after get_recent_executions to drill into a failed run. Pass the numeric executionId.",
+                                                               "url":  "http://localhost:5678/api/v1/executions/{executionId}?includeData=true",
+                                                               "authentication":  "genericCredentialType",
+                                                               "genericAuthType":  "httpHeaderAuth"
+                                                           },
+                                            "position":  [
+                                                             560,
+                                                             80
+                                                         ],
+                                            "name":  "get_execution_details",
+                                            "id":  "c5e9f013-6789-01bc-def0-execdetail001",
+                                            "type":  "@n8n/n8n-nodes-langchain.toolHttpRequest",
+                                            "typeVersion":  1.1,
+                                            "credentials":  {
+                                                                "httpHeaderAuth":  {
+                                                                                       "id":  "2e83nKyfblZXaIIl",
+                                                                                       "name":  "n8n-api-key"
+                                                                                   }
+                                                            }
+                                        }
+                                    ],
+                          "connections":  {
+                                              "list_workflows":  {
+                                                                     "ai_tool":  [
+                                                                                     [
+                                                                                         {
+                                                                                             "node":  "MCP Server Trigger",
+                                                                                             "type":  "ai_tool",
+                                                                                             "index":  0
+                                                                                         }
+                                                                                     ]
+                                                                                 ]
+                                                                 },
+                                              "trigger_webhook_workflow":  {
+                                                                               "ai_tool":  [
+                                                                                               [
+                                                                                                   {
+                                                                                                       "node":  "MCP Server Trigger",
+                                                                                                       "type":  "ai_tool",
+                                                                                                       "index":  0
+                                                                                                   }
+                                                                                               ]
+                                                                                           ]
+                                                                           },
+                                              "get_recent_executions":  {
+                                                                            "ai_tool":  [
+                                                                                            [
+                                                                                                {
+                                                                                                    "node":  "MCP Server Trigger",
+                                                                                                    "type":  "ai_tool",
+                                                                                                    "index":  0
+                                                                                                }
+                                                                                            ]
+                                                                                        ]
+                                                                        },
+                                              "get_execution_details":  {
+                                                                            "ai_tool":  [
+                                                                                            [
+                                                                                                {
+                                                                                                    "node":  "MCP Server Trigger",
+                                                                                                    "type":  "ai_tool",
+                                                                                                    "index":  0
+                                                                                                }
+                                                                                            ]
+                                                                                        ]
+                                                                        }
+                                          },
+                          "authors":  "Passionate Agency",
+                          "name":  null,
+                          "description":  null,
+                          "autosaved":  false
+                      },
+    "tags":  [
+
+             ]
+}
