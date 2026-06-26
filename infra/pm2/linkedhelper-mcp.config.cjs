@@ -3,7 +3,7 @@
 // Public: https://lh.passionate.agency/mcp
 //
 // LINKEDHELPER_PATH: update to newest app-X.X.XX folder after LH auto-updates.
-// See skills/update-linkedhelper-version.md for all 3 places to change.
+// See .claude/skills/update-linkedhelper-version/SKILL.md for all 3 places to change.
 
 const npmModules = process.env.APPDATA + '\\npm\\node_modules';
 

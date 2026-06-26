@@ -45,12 +45,12 @@ Set-Content "$env:USERPROFILE\.claude.json" $raw -Encoding utf8
 
 ### Rotate n8n API key
 
-See `skills/rotate-n8n-api-key.md` — 4 locations must be updated in order.
+See `.claude/skills/rotate-n8n-api-key/SKILL.md` — 4 locations must be updated in order.
 
 ### LinkedHelper version update
 
-See `skills/update-linkedhelper-version.md` — 3 paths must be updated.
+See `.claude/skills/update-linkedhelper-version/SKILL.md` — 3 paths must be updated.
 
 ### Full machine restore
 
-See `skills/restore-machine.md` and run `infra/scripts/restore-machine.ps1`.
+See `.claude/skills/restore-machine/SKILL.md` and run `infra/scripts/restore-machine.ps1`.

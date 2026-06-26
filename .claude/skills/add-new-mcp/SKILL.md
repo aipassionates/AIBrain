@@ -1,3 +1,8 @@
+---
+name: add-new-mcp
+description: Add a new MCP server to the stack (PM2 -> Cloudflare Tunnel -> Cowork connector) using the standard 6-step pattern.
+---
+
 # Skill: Add a New MCP Server
 
 Adds a new MCP server to the full stack: PM2 → Cloudflare Tunnel → Cowork connector.
@@ -15,7 +20,7 @@ npm install -g <package-name>
 
 **If it's custom code (new server you're building):**
 ```powershell
-New-Item -ItemType Directory -Force -Path "C:\Users\user\passionate-agency\mcp-servers\<name>"
+New-Item -ItemType Directory -Force -Path "C:\Users\user\AIBrain\mcp-servers\<name>"
 # Write index.js there; install dependencies with npm install
 ```
 
@@ -33,7 +38,7 @@ module.exports = {
     args: [
       '--stdio', 'node ' + npmModules + '\\<package>\\dist\\<entry>.js mcp',
       // OR for custom code:
-      // '--stdio', 'node C:\\Users\\user\\passionate-agency\\mcp-servers\\<name>\\index.js',
+      // '--stdio', 'node C:\\Users\\user\\AIBrain\\mcp-servers\\<name>\\index.js',
       '--port', '<PORT>',             // next free port: 6005, 6006, ...
       '--outputTransport', 'streamableHttp',
       '--stateful',
@@ -50,7 +55,7 @@ Also copy the config to `C:\Users\user\pm2\` (live PM2 reads from there).
 ## Step 3 — Start PM2
 
 ```powershell
-pm2 start "C:\Users\user\passionate-agency\infra\pm2\<name>.config.cjs"
+pm2 start "C:\Users\user\AIBrain\infra\pm2\<name>.config.cjs"
 pm2 save
 pm2 list  # verify status=online, restarts=0
 ```

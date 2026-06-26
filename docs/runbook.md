@@ -8,7 +8,7 @@ Incidents that cost time to debug, written down so they don't cost time again.
 
 **Symptom:** Editing `~/.cloudflared/config.yml` has no effect on the running tunnel.
 **Root cause:** The service was installed with `cloudflared service install` which runs as LocalSystem. The binary is hardcoded to read `C:\Windows\System32\config\systemprofile\.cloudflared\config.yml`.
-**Fix:** Always edit the SYSTEM path. Admin PowerShell required. See `skills/add-new-mcp.md` Step 4.
+**Fix:** Always edit the SYSTEM path. Admin PowerShell required. See `.claude/skills/add-new-mcp/SKILL.md` Step 4.
 
 ---
 
@@ -16,7 +16,7 @@ Incidents that cost time to debug, written down so they don't cost time again.
 
 **Symptom:** After editing `~/.claude.json` with ConvertFrom-Json → ConvertTo-Json, `claude mcp list` shows no servers. The file shrank.
 **Root cause:** PowerShell 5.1's ConvertTo-Json drops Claude-internal fields it doesn't know about. The `mcpServers` block disappears entirely.
-**Fix:** Use raw string replacement to ADD entries. Only use ConvertFrom-Json to update an existing value. See `skills/restore-claude-json.md`.
+**Fix:** Use raw string replacement to ADD entries. Only use ConvertFrom-Json to update an existing value. See `.claude/skills/restore-claude-json/SKILL.md`.
 **Has happened:** Twice (May 2026).
 
 ---

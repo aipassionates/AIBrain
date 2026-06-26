@@ -3,7 +3,7 @@
 // Public: https://media.passionate.agency/mcp
 //
 // LIVE PATH: C:\tools\media-mcp\index.js (until migrated to mcp-servers/)
-// TARGET PATH after migration: C:\Users\user\passionate-agency\mcp-servers\media-mcp\index.js
+// TARGET PATH after migration: C:\Users\user\AIBrain\mcp-servers\media-mcp\index.js
 // Run infra/scripts/migrate-mcp-servers.ps1 to migrate and restart PM2.
 //
 // To change storage/quality: edit env block, then: pm2 restart media-extract-mcp && pm2 save

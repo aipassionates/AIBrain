@@ -48,4 +48,4 @@ Copies source from C:\tools\, installs deps at new location, updates PM2 to use 
 1. Create `mcp-servers/<name>/index.js` using `@modelcontextprotocol/sdk`
 2. Add `package.json` with dependencies
 3. Create `infra/pm2/<name>.config.cjs` using the supergateway pattern
-4. Follow `skills/add-new-mcp.md` for tunnel + Cowork wiring
+4. Follow `.claude/skills/add-new-mcp/SKILL.md` for tunnel + Cowork wiring

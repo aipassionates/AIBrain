@@ -74,9 +74,9 @@ n8n-builder (stdio) and n8n-executor (cloud) are NOT interchangeable — both mu
 
 ## Critical Non-Obvious Rules
 
-**Cloudflare tunnel config:** The `cloudflared` Windows service runs as LocalSystem and reads from the SYSTEM profile path — NOT `~/.cloudflared/`. All ingress edits require admin PowerShell. See `skills/add-new-mcp.md`.
+**Cloudflare tunnel config:** The `cloudflared` Windows service runs as LocalSystem and reads from the SYSTEM profile path — NOT `~/.cloudflared/`. All ingress edits require admin PowerShell. See `.claude/skills/add-new-mcp/SKILL.md`.
 
-**`~/.claude.json` edits:** `ConvertFrom-Json → ConvertTo-Json` silently wipes the entire `mcpServers` block. Use raw string insertion to ADD entries. Safe for updating an existing value. See `skills/restore-claude-json.md`.
+**`~/.claude.json` edits:** `ConvertFrom-Json → ConvertTo-Json` silently wipes the entire `mcpServers` block. Use raw string insertion to ADD entries. Safe for updating an existing value. See `.claude/skills/restore-claude-json/SKILL.md`.
 
 **n8n API from Claude Code:** Use `https://api.passionate.agency/api/v1` — localhost is SSRF-blocked. Header: `X-N8N-API-KEY` (not `Authorization: Bearer`).
 
@@ -84,7 +84,7 @@ n8n-builder (stdio) and n8n-executor (cloud) are NOT interchangeable — both mu
 
 **n8n workflow settings API:** Only `{ "executionOrder": "v1" }` in settings object — no `binaryMode` or undocumented fields (ZodError).
 
-**LinkedHelper version updates:** After LH auto-updates, three paths must be updated manually: startup shortcut, PM2 LINKEDHELPER_PATH, ~/.claude.json. See `skills/update-linkedhelper-version.md`.
+**LinkedHelper version updates:** After LH auto-updates, three paths must be updated manually: startup shortcut, PM2 LINKEDHELPER_PATH, ~/.claude.json. See `.claude/skills/update-linkedhelper-version/SKILL.md`.
 
 **After n8n API workflow edits:** Deactivate then reactivate the workflow to re-register webhooks — API updates alone don't trigger registration.
 
@@ -92,7 +92,7 @@ n8n-builder (stdio) and n8n-executor (cloud) are NOT interchangeable — both mu
 
 ## Adding a New MCP (6-step pattern)
 
-Full detail: `skills/add-new-mcp.md`. Summary:
+Full detail: `.claude/skills/add-new-mcp/SKILL.md`. Summary:
 
 1. Install: `npm install -g <pkg>` (npm) or put custom code in `mcp-servers/<name>/`
 2. Create PM2 config in `infra/pm2/<name>.config.cjs` (supergateway pattern, next port)

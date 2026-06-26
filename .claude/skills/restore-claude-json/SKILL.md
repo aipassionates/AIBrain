@@ -1,3 +1,8 @@
+---
+name: restore-claude-json
+description: Safely add or restore MCP server entries in ~/.claude.json without wiping the mcpServers block.
+---
+
 # Skill: Restore / Edit ~/.claude.json Safely
 
 ## The rule

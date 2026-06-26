@@ -1,3 +1,8 @@
+---
+name: update-linkedhelper-version
+description: Update LinkedHelper after an app auto-update by fixing the 3 stale paths (startup shortcut, PM2 config, ~/.claude.json).
+---
+
 # Skill: Update LinkedHelper Version
 
 After LinkedHelper auto-updates to a new `app-X.X.XX` folder, three paths must be updated.

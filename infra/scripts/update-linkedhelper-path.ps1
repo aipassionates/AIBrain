@@ -28,7 +28,7 @@ $Shortcut.Save()
 Write-Host "  ✓ Startup shortcut updated"
 
 # ── 2. PM2 ecosystem config ───────────────────────────────────────────────────
-$RepoConfig = "C:\Users\user\passionate-agency\infra\pm2\linkedhelper-mcp.config.cjs"
+$RepoConfig = "C:\Users\user\AIBrain\infra\pm2\linkedhelper-mcp.config.cjs"
 $LiveConfig  = "C:\Users\user\pm2\linkedhelper-mcp.config.cjs"
 
 foreach ($cfg in @($RepoConfig, $LiveConfig)) {

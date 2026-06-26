@@ -26,6 +26,10 @@ desktop.ini
 # Claude Code session files (ephemeral, not project tracking)
 .claude/projects/
 
+# Claude Code personal/local settings (machine-specific, never commit)
+.claude/settings.local.json
+CLAUDE.local.md
+
 # Large media files
 *.mp4
 *.mp3

@@ -2,7 +2,11 @@
   "folders": [
     {
       "path": ".",
-      "name": "passionate-agency (project root)"
+      "name": "AIBrain (project root)"
+    },
+    {
+      "path": "C:\\Users\\user",
+      "name": "User home (browse old files)"
     },
     {
       "path": "C:\\tools",
@@ -10,7 +14,7 @@
     },
     {
       "path": "C:\\Users\\user\\pm2",
-      "name": "PM2 configs (legacy — see infra/pm2/)"
+      "name": "PM2 configs (live)"
     },
     {
       "path": "D:\\media",
@@ -23,11 +27,24 @@
       "**/.git": true,
       "**/token.json": true,
       "**/credentials.json": true,
+      "C:/Users/user/AppData": true,
+      "C:/Users/user/.cache": true,
+      "C:/Users/user/.pm2": true,
+      "C:/Users/user/OneDrive": true,
+      "C:/Users/user/3D Objects": true,
+      "C:/Users/user/Contacts": true,
+      "C:/Users/user/Favorites": true,
+      "C:/Users/user/Links": true,
+      "C:/Users/user/Saved Games": true,
+      "C:/Users/user/Searches": true,
       "D:/media/downloads": true,
       "D:/media/audio": true
     },
     "search.exclude": {
       "**/node_modules": true,
+      "C:/Users/user/AppData": true,
+      "C:/Users/user/.cache": true,
+      "C:/Users/user/OneDrive": true,
       "D:/media": true
     },
     "files.encoding": "utf8",
@@ -37,6 +54,7 @@
   },
   "extensions": {
     "recommendations": [
+      "anthropic.claude-code",
       "ms-vscode.powershell",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",

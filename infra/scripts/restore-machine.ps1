@@ -6,14 +6,14 @@
 #   - Windows 11
 #   - Node.js LTS installed (nodejs.org) — check MAINTENANCE.md for version
 #   - Git installed
-#   - Clone this repo: git clone <repo-url> C:\Users\user\passionate-agency
+#   - Clone this repo: git clone <repo-url> C:\Users\user\AIBrain
 #   - Cloudflare tunnel credentials JSON in password manager (see infra/cloudflared/README.md)
 #   - .env populated from .env.example
 #   - Google credentials.json downloaded from Google Cloud Console
 #
 # Usage: .\infra\scripts\restore-machine.ps1
 
-$RepoRoot = "C:\Users\user\passionate-agency"
+$RepoRoot = "C:\Users\user\AIBrain"
 $ErrorActionPreference = "Stop"
 
 Write-Host "=== Passionate Agency Stack Restore ===" -ForegroundColor Cyan

@@ -3,7 +3,7 @@
 // Public: https://analytics.passionate.agency/mcp
 //
 // LIVE PATH: C:\tools\google-analytics-mcp\index.js (until migrated)
-// TARGET PATH after migration: C:\Users\user\passionate-agency\mcp-servers\google-analytics-mcp\index.js
+// TARGET PATH after migration: C:\Users\user\AIBrain\mcp-servers\google-analytics-mcp\index.js
 // Run infra/scripts/migrate-mcp-servers.ps1 to migrate.
 //
 // Auth: credentials.json + token.json must be present at CREDENTIALS_PATH/TOKEN_PATH.

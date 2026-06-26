@@ -22,4 +22,4 @@ DNS CNAME target: `30618ade-6269-438c-b28a-3fca6b8d297b.cfargotunnel.com`
 
 1. Use the next port in sequence (6005, 6006, …)
 2. Update this file
-3. Follow `skills/add-new-mcp.md`
+3. Follow `.claude/skills/add-new-mcp/SKILL.md`

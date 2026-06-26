@@ -1,3 +1,8 @@
+---
+name: restore-machine
+description: Full machine disaster recovery: rebuild the entire automation stack from git plus password-manager secrets.
+---
+
 # Skill: Restore Full Stack on New Machine
 
 For the automated portions, run `infra/scripts/restore-machine.ps1`.
@@ -21,7 +26,7 @@ This skill covers everything the script can't do (accounts, secrets, OAuth).
 Install in this order (each depends on the previous):
 1. Node.js LTS — check `MAINTENANCE.md` for the version the stack was running
 2. Git
-3. Clone repo: `git clone <repo-url> C:\Users\user\passionate-agency`
+3. Clone repo: `git clone <repo-url> C:\Users\user\AIBrain`
 
 ### 2. npm globals
 
@@ -44,8 +49,8 @@ Invoke-WebRequest "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-
 ### 4. MCP server dependencies
 
 ```powershell
-cd C:\Users\user\passionate-agency\mcp-servers\media-mcp; npm install
-cd C:\Users\user\passionate-agency\mcp-servers\google-analytics-mcp; npm install
+cd C:\Users\user\AIBrain\mcp-servers\media-mcp; npm install
+cd C:\Users\user\AIBrain\mcp-servers\google-analytics-mcp; npm install
 ```
 
 Copy `credentials.json` from password manager → `mcp-servers/google-analytics-mcp/credentials.json`
@@ -78,7 +83,7 @@ Restore credentials in n8n Credential store (values from password manager).
 
 ```powershell
 # Copy PM2 configs to live location
-Copy-Item C:\Users\user\passionate-agency\infra\pm2\* C:\Users\user\pm2\ -Force
+Copy-Item C:\Users\user\AIBrain\infra\pm2\* C:\Users\user\pm2\ -Force
 
 pm2 start C:\Users\user\pm2\linkedhelper-mcp.config.cjs
 pm2 start C:\Users\user\pm2\media-extract.config.cjs
@@ -99,11 +104,11 @@ sc.exe start cloudflared
 ### 8. LinkedHelper
 
 Install LinkedHelper desktop app → log in to LinkedIn accounts → configure startup shortcut
-(see `skills/update-linkedhelper-version.md` for the shortcut + PM2 config update).
+(see `.claude/skills/update-linkedhelper-version/SKILL.md` for the shortcut + PM2 config update).
 
 ### 9. ~/.claude.json
 
-Run the recovery script from `skills/restore-claude-json.md` for n8n-local-builder.
+Run the recovery script from `.claude/skills/restore-claude-json/SKILL.md` for n8n-local-builder.
 Cloud connectors (lh, media, analytics, cowork) reconnect via Cowork Settings → Connectors.
 
 ### 10. Verification

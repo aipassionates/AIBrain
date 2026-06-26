@@ -1,3 +1,8 @@
+---
+name: rotate-n8n-api-key
+description: Rotate the n8n API key across every location: User env var, ~/.claude.json, and the n8n credential store.
+---
+
 # Skill: Rotate n8n API Key
 
 Four locations must be updated in order. If any is missed, that component breaks.

@@ -54,7 +54,7 @@ Short log of what was chosen, what was rejected, and why. Updated as decisions a
 
 ## 2026-06 — passionate-agency/ as git root, not ~/ (home dir)
 
-**Chose:** `C:\Users\user\passionate-agency\` as the git repo root
+**Chose:** `C:\Users\user\AIBrain\` as the git repo root
 **Rejected:** making `C:\Users\user\` itself a git repo
 **Why:** Home dir as git root risks committing sensitive files (.claude.json, AppData shortcuts, etc.) and creates a messy .gitignore problem. A dedicated subdirectory is clean, portable, and clonable on a new machine without home dir assumptions.
 
