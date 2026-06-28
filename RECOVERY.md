@@ -60,6 +60,13 @@ LinkedHelper · OpenBB · VS Code + `code tunnel service install`.
 Code from git + secret **values** from Bitwarden under the **same names** = identical behaviour.
 You never reconstruct logic — only re-supply secrets. That's the whole disaster-recovery contract.
 
-## 6. Chats & memory (local-only, not in git)
+## 6. Non-secret config (safe in git — set these on restore)
+These are NOT secrets (public URLs / your email) — set as User env vars on a new machine:
+- `SEO_REPORT_TO` = `gor@passionates.com`
+- `GSC_SITE_URL` = `https://passionates.com/`
+- `WP_URL_PASSIONATES` = `https://passionates.com`
+- `WP_USER_PASSIONATES` = (WordPress username — non-secret, pairs with the `WP_APP_PASS` secret)
+
+## 7. Chats & memory (local-only, not in git)
 Claude Code transcripts live in `~/.claude/projects/` (machine-bound, may contain secrets — deliberately
 not backed up). Durable knowledge is in `MEMORY.md` + this repo.
