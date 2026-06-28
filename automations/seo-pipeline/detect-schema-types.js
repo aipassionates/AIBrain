@@ -12,7 +12,7 @@
 const https = require('https');
 
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 const CONCURRENCY = 5;  // simultaneous page fetches
 const DELAY_MS    = 150;
 

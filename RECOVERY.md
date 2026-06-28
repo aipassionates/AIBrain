@@ -15,7 +15,7 @@ Bitwarden under those **same names** — and the services resume working identic
 | Path | Contents |
 |---|---|
 | `mcp-servers/` | Custom MCP source: `media-mcp`, `google-analytics-mcp` (no `node_modules`, no secrets) |
-| `automations/seo-pipeline/` | SEO pipeline scripts (Supabase key externalized to `process.env.SUPABASE_ANON_KEY`) |
+| `automations/seo-pipeline/` | SEO pipeline scripts (Supabase key externalized to `process.env.SUPABASE_ANON_KEY_PASSIONATES`) |
 | `infra/pm2/` | All PM2 ecosystem configs (n8n, MCPs, openbb, seo-weekly) |
 | `infra/n8n-workflows/` | Exported n8n workflows (contain **no** credential values, only references) |
 | `infra/cloudflared/config.yml.example` | Tunnel ingress template |
@@ -30,7 +30,7 @@ Store each in Bitwarden now. On restore, recreate under the **exact same name**.
 |---|---|---|
 | **n8n encryption key** | `N8N_ENCRYPTION_KEY` env (set BEFORE first n8n start) | n8n — without it, all stored credentials are unreadable |
 | n8n API key | `N8N_API_KEY` User env + `~/.claude.json` + n8n credential store | export script, n8n-local-builder, Cowork auth |
-| Supabase anon key | `SUPABASE_ANON_KEY` User env | SEO pipeline scripts |
+| Supabase anon key | `SUPABASE_ANON_KEY_PASSIONATES` User env | SEO pipeline scripts |
 | WordPress app password | `WP_APP_PASS_PASSIONATES` User env | SEO WordPress import scripts |
 | Gmail app password | `GMAIL_APP_PASSWORD` User env | seo-weekly email alerts |
 | Google OAuth client | file → `C:\tools\google-analytics-mcp\credentials.json` | google-analytics-mcp |

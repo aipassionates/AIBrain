@@ -10,7 +10,7 @@ const https = require('https');
 
 // ── Config ───────────────────────────────────────────────────────────────────
 const SUPABASE   = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY   = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY   = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 const WP_BASE    = 'https://passionates.com';
 const BATCH_SIZE = 200;
 const GSC_DIR    = 'C:/Users/user/.claude/projects/C--Users-user/41ed0edb-b51d-4ea6-aabd-1bc47bb09e63/tool-results';

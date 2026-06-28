@@ -32,7 +32,7 @@ const WP_PASS = process.env.WP_APP_PASS_PASSIONATES;
 const WP_AUTH = Buffer.from(`${WP_USER}:${WP_PASS}`).toString('base64');
 
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 
 const PER_PAGE   = 100;
 const BATCH_SIZE = 50;

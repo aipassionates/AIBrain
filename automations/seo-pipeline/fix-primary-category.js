@@ -8,7 +8,7 @@ const https = require('https');
 
 const WP_BASE  = 'https://passionates.com';
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 
 function get(url) {
   return new Promise((resolve, reject) => {

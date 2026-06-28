@@ -43,7 +43,7 @@ const WP_BASE    = 'https://passionates.com';
 const WP_USER    = process.env.WP_USER_PASSIONATES;
 const WP_PASS    = process.env.WP_APP_PASS_PASSIONATES;
 const SUPABASE   = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY   = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY   = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 
 // ─── SHARED HELPERS ───────────────────────────────────────────────────────────
 function norm(url) { return url ? url.replace(/\/$/, '').toLowerCase() : null; }

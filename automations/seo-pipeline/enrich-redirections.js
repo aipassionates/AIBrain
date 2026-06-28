@@ -18,7 +18,7 @@ const https = require('https');
 
 const WP_BASE  = 'https://passionates.com';
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 const WP_TOKEN = process.env.CLAUDE_SEO_TOKEN;
 
 if (!WP_TOKEN) { console.error('ERROR: CLAUDE_SEO_TOKEN not set'); process.exit(1); }

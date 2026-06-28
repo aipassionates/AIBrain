@@ -17,7 +17,7 @@ const https = require('https');
 const path  = require('path');
 
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 const DATA = 'C:\\tools\\data';
 
 function normUrl(url) {

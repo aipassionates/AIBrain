@@ -18,7 +18,7 @@ const https = require('https');
 const path  = require('path');
 
 const SUPABASE = 'https://cjwwkmaiqsbgygqtjxel.supabase.co';
-const ANON_KEY = process.env.SUPABASE_ANON_KEY;
+const ANON_KEY = process.env.SUPABASE_ANON_KEY_PASSIONATES;
 
 // Fixed data directory — populated weekly by the weekly-seo-refresh scheduled task
 const DATA_DIR    = 'C:\\tools\\data';

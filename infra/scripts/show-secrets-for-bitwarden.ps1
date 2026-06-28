@@ -7,15 +7,15 @@
 # It only READS and DISPLAYS. It never writes secrets to disk.
 
 Write-Host "==== ENV VAR SECRETS (one Bitwarden entry each) ====" -ForegroundColor Cyan
-$names = 'N8N_API_KEY','WP_APP_PASS','WP_APP_PASS_PASSIONATES','WP_USER_PASSIONATES','WP_URL_PASSIONATES','CLAUDE_SEO_TOKEN','GMAIL_APP_PASSWORD','SUPABASE_ANON_KEY'
+$names = 'N8N_API_KEY','WP_APP_PASS','WP_APP_PASS_PASSIONATES','WP_USER_PASSIONATES','WP_URL_PASSIONATES','CLAUDE_SEO_TOKEN','GMAIL_APP_PASSWORD','SUPABASE_ANON_KEY_PASSIONATES'
 foreach($n in $names){
   $v=[Environment]::GetEnvironmentVariable($n,'User')
   if($v){ "{0,-26} = {1}" -f $n,$v } else { "{0,-26} = (not set as env var)" -f $n }
 }
 
-Write-Host "`n==== SUPABASE_ANON_KEY (read from live SEO script) ====" -ForegroundColor Cyan
+Write-Host "`n==== SUPABASE_ANON_KEY_PASSIONATES (read from live SEO script) ====" -ForegroundColor Cyan
 $m = Select-String -Path 'C:\tools\enrich-ga4.js' -Pattern "ANON_KEY\s*=\s*'(eyJ[^']+)'"
-if($m){ "SUPABASE_ANON_KEY        = " + $m.Matches[0].Groups[1].Value } else { "not found - check C:\tools\enrich-ga4.js line ~17" }
+if($m){ "SUPABASE_ANON_KEY_PASSIONATES        = " + $m.Matches[0].Groups[1].Value } else { "not found - check C:\tools\enrich-ga4.js line ~17" }
 
 Write-Host "`n==== n8n ENCRYPTION KEY (MOST CRITICAL) ====" -ForegroundColor Cyan
 $cfg = "$env:USERPROFILE\.n8n\config"

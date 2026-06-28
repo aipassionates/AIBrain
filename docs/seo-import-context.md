@@ -185,7 +185,7 @@ function normalise(rows) {
 ```
 Project ID:  cjwwkmaiqsbgygqtjxel
 REST URL:    https://cjwwkmaiqsbgygqtjxel.supabase.co/rest/v1/
-Anon key:    <SUPABASE_ANON_KEY - stored in Bitwarden>
+Anon key:    <SUPABASE_ANON_KEY_PASSIONATES - stored in Bitwarden>
 RLS:         Disabled on all 3 tables (anon key has full read/write access)
 ```
 
